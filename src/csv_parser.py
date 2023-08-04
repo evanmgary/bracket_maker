@@ -32,8 +32,12 @@ for line in data:
     output_2 = output_2 + f'"1{region}{seed}" : {{"id" : "1{region}{seed}", "team" : "{name}", "pred1" : null, "pred2": null, "succ" : "#N#"}}' + ',\n\t'
 
 # After this the slots for the later rounds need to be made. This file is only entering placeholder values for these, the actual ids need to be entered manually
+ids = ["2S1", "2S2", "2S3", "2S4", "2S5", "2S6", "2S7", "2S8", "2E1", "2E2", "2E3", "2E4", "2E5", "2E6", "2E7", "2E8","2M1", "2M2", "2M3",\
+ "2M4", "2M5", "2M6", "2M7", "2M8", "2W1", "2W2", "2W3", "2W4", "2W5", "2W6", "2W7", "2W8", "3S1", "3S2", "3S3", "3S4", "3E1", "3E2", "3E3",\
+ "3E4", "3M1", "3M2", "3M3", "3M4", "3W1", "3W2", "3W3", "3W4", "4S1", "4S2", "4E1", "4E2", "4M1", "4M2", "4W1", "4W2", "5S1", "5E1", "5M1",\
+ "5W1", "6F1", "6F2", "7F1"]
 for i in range(63):
-    output_2 = output_2 + f'"#R#" : {{"id" : "#N#", "team" : null, "pred1" : "#N#", "pred2" : "#N#", "succ" : "#N#"}},' + '\n\t'
+    output_2 = output_2 + f'"{ids[i]}" : {{"id" : "{ids[i]}", "team" : null, "pred1" : "#N#", "pred2" : "#N#", "succ" : "#N#"}},' + '\n\t'
 output_2 = output_2[:-3]
 output_2 = output_2 + "\n}"
 out_file_2 = open('InitState.json', 'w')
