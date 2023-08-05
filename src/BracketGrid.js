@@ -1,11 +1,12 @@
 import React from 'react'
 import './BracketGrid.css'
+import BracketSlot from './BracketSlot.js'
 
 function BracketGrid(props){
     
     return(
         <div className="bracketGrid">
-            <div style={{border: 1, borderColor: 'red',backgroundColor: 'green' ,gridColumn: 2, gridRow: 2}}>TEST</div>
+            <BracketSlot row="10" column="2"/>
 
 
         </div>

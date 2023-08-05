@@ -2,8 +2,9 @@
     display : grid;
     min-height: 1000px;
     min-width: 500px;
-    background-color: darkblue;
+    background-color: skyblue;
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(67, 1fr);
+    
 
 }
