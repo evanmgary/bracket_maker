@@ -5,11 +5,11 @@ import './BracketSlot.css'
 function BracketSlot(props){
 
     let slotLoc = {gridRow: props.row, gridColumn: props.column}
-    
+    const value = props.teams[props.team] ? `(${props.teams[props.team].seed}) ${props.teams[props.team].name}` : ""
     
     return(
-        <div className="bracketSlot" style={slotLoc}>
-            <div>TEST</div>
+        <div id={props.id} className="bracketSlot" style={slotLoc}>
+            <span className="slotText">{props.id + " " + value}</span>
         </div>
 
     )
