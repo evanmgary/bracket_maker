@@ -1,0 +1,6 @@
+.controlBox{
+    height: 200px;
+    width: 500px;
+    border: 3px;
+    border-style: solid;
+}
