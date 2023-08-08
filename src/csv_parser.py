@@ -11,7 +11,7 @@ output = "{\n\t"
 # "Connecticut" : {"name" : "Connecticut", "region" : "W", "seed" : 4, bpi: 18.3},\n\t
 for line in data:
     teamdata = line.split(",")
-    item = f'"{teamdata[0]}" : {{"name": "{teamdata[0]}", "region" : "{teamdata[1][0]}", "seed" : "{teamdata[2]}", "bpi" : {teamdata[3]}, "kenpom" : {teamdata[4]}, "sagarin" : {teamdata[5]}, "moore" : {teamdata[6]}}},' + '\n\t'
+    item = f'"{teamdata[0]}" : {{"name": "{teamdata[0]}", "region" : "{teamdata[1][0]}", "seed" : "{teamdata[2]}", "b" : {teamdata[3]}, "k" : {teamdata[4]}, "s" : {teamdata[5]}, "m" : {teamdata[6]}}},' + '\n\t'
     output = output + item
 output = output[:-3]
 output = output + "\n}"
