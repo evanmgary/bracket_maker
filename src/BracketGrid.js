@@ -6,6 +6,8 @@ function BracketGrid(props){
     let state = props.state
     let stateKeys = Object.keys(state)
 
+    
+
     function findRow(id){
         const round = parseInt(id[0])
         const region = id[1]
@@ -60,7 +62,7 @@ function BracketGrid(props){
                 
                     let row = findRow(key)
                     let col = findCol(key)
-                    return <BracketSlot id={key} team={state[key].team} state={state} teams={props.teams} row={row} column={col}/>
+                    return <BracketSlot id={key} team={state[key].team} state={state} setState={props.setState} teams={props.teams} row={row} column={col} controls={props.controls} advanceTeam={props.advanceTeam} checkProbability={props.checkProbability}/>
                 
             }
             )}
