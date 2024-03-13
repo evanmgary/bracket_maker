@@ -1,0 +1,28 @@
+.saveBracketDiv{
+    position: relative;
+    margin: 20px auto;
+    width: 30%;
+    align-items: center;
+
+}
+.updateButton, .saveRetrieveButton{
+    margin: 0 10px;
+}
+.savePopup{
+    position: absolute;
+    background-color: rgb(223, 232, 233);
+    top: 30px;
+    left: 80px;
+    width: 400px;
+    margin: 10px auto;
+    padding: 30px 0px;
+    border-radius: 5px;
+    border: 1px solid black;
+    z-index: 2
+}
+
+.closeButton{
+    position: absolute;
+    top: 8px;
+    right: 12px;
+}

@@ -66,16 +66,16 @@ export function checkProbability(team1, team2, teams, controls){
     let team2b = normalize(teams[team2].b, -5, 20)
     let team1k = normalize(teams[team1].k, -10, 30)
     let team2k = normalize(teams[team2].k, -10, 30)
-    let team1s = normalize(teams[team1].s, 60, 100)
-    let team2s = normalize(teams[team2].s, 60, 100)
+    let team1s = normalize(teams[team1].e, 60, 100)
+    let team2s = normalize(teams[team2].e, 60, 100)
     let team1m = normalize(teams[team1].m, 65, 105)
     let team2m = normalize(teams[team2].m, 65, 105)
-    let numIndex = (controls.useB ? 1 : 0) + (controls.useK ? 1 : 0) + (controls.useS ? 1 : 0) + (controls.useM ? 1 : 0)
+    let numIndex = (controls.useB ? 1 : 0) + (controls.useK ? 1 : 0) + (controls.useE ? 1 : 0) + (controls.useM ? 1 : 0)
     if (numIndex < 0.1){
         return 0.5
     }
-    let powerRank1 = ((controls.useB ? team1b : 0) + (controls.useK ? team1k : 0) + (controls.useS ? team1s : 0) + (controls.useM ? team1m : 0)) / numIndex
-    let powerRank2 = ((controls.useB ? team2b : 0) + (controls.useK ? team2k : 0) + (controls.useS ? team2s : 0) + (controls.useM ? team2m : 0)) / numIndex
+    let powerRank1 = ((controls.useB ? team1b : 0) + (controls.useK ? team1k : 0) + (controls.useE ? team1s : 0) + (controls.useM ? team1m : 0)) / numIndex
+    let powerRank2 = ((controls.useB ? team2b : 0) + (controls.useK ? team2k : 0) + (controls.useE ? team2s : 0) + (controls.useM ? team2m : 0)) / numIndex
     let diff = powerRank1 - powerRank2
 
     return 0.5 + 0.005 * diff

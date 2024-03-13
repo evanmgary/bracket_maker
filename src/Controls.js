@@ -20,19 +20,19 @@ function Controls(props){
         <div className="controlBox">
             <label>
                 <input className="controlCheck" id="useB" type="checkbox" onClick={handleCheckboxChange} checked={controlState.useB}/>
-                B
+                BPI
             </label>
             <label>
                 <input className="controlCheck" id="useK" type="checkbox" onClick={handleCheckboxChange} checked={controlState.useK}/>
-                K
+                KenPom
             </label>
             <label>
-                <input className="controlCheck" id="useS" type="checkbox" onClick={handleCheckboxChange} checked={controlState.useS}/>
-                S
+                <input className="controlCheck" id="useE" type="checkbox" onClick={handleCheckboxChange} checked={controlState.useE}/>
+                EvanMiya
             </label>
             <label>
                 <input className="controlCheck" id="useM" type="checkbox" onClick={handleCheckboxChange} checked={controlState.useM}/>
-                M
+                Moore
             </label>
             <button className="controlButton" id="randomize-button" onClick={clickRandomize}>Randomize</button>
             <button className="controlButton" id="clear-button" onClick={clickClear}>Clear Bracket</button>

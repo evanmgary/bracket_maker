@@ -3,7 +3,7 @@
     min-height: 1000px;
     min-width: 500px;
     background-color: rgb(255, 255, 255);
-    grid-template-columns: repeat(11, 1fr);
+    grid-template-columns: repeat(21, 1fr);
     grid-template-rows: repeat(67, 1fr);
     border: 3px solid black;
     border-radius: 5px;
@@ -11,4 +11,9 @@
     padding: 5px;
     
 
+}
+
+.svgLine{
+    stroke: black;
+    stroke-width: 3px;
 }
