@@ -18,6 +18,8 @@ function BracketSlot(props){
     let kStyle = {textDecoration: props.controls.useK ? "none" : "line-through"}
     let eStyle = {textDecoration: props.controls.useE ? "none" : "line-through"}
     let mStyle = {textDecoration: props.controls.useM ? "none" : "line-through"}
+    let tStyle = {textDecoration: props.controls.useT ? "none" : "line-through"}
+    let hStyle = {textDecoration: props.controls.useH ? "none" : "line-through"}
 
     function tooltip(){
         if (props.id[0] === '1'){
@@ -38,6 +40,8 @@ function BracketSlot(props){
                     <span className="kData" style={kStyle}>Kenpom: {teamPred1.k} </span>
                     <span className="eData" style={eStyle}>EvanMiya: {teamPred1.e} </span>
                     <span className="mData" style={mStyle}>Moore: {teamPred1.m}</span>
+                    <span className="tData" style={tStyle}>T Rank: {teamPred1.t}</span>
+                    <span className="hData" style={hStyle}>Haslam: {teamPred1.h}</span>
                 </div>
                 <div className="tooltipText tooltipTeam2">{`(${teamPred2.seed}) ${teamPred2.name}`}</div>
                 <div className="tooltipText tooltipTeam2">
@@ -45,6 +49,8 @@ function BracketSlot(props){
                     <span className="kData" style={kStyle}>KenPom: {teamPred2.k} </span>
                     <span className="eData" style={eStyle}>EvanMiya: {teamPred2.e} </span>
                     <span className="mData" style={mStyle}>Moore: {teamPred2.m}</span>
+                    <span className="tData" style={tStyle}>T Rank: {teamPred2.t}</span>
+                    <span className="hData" style={hStyle}>Haslam: {teamPred2.h}</span>
                 </div>
                 <div className="tooltipText probabilityText">{teamPred1.name} probability: {props.checkProbability(teamPred1.name, teamPred2.name, props.teams, props.controls).toFixed(2)}</div>
             </div>

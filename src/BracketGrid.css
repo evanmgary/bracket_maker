@@ -1,5 +1,7 @@
 .bracketGrid{
     display : grid;
+    height: 1000px;
+    width: 500px;
     min-height: 1000px;
     min-width: 500px;
     background-color: rgb(255, 255, 255);
@@ -7,9 +9,9 @@
     grid-template-rows: repeat(67, 1fr);
     border: 3px solid black;
     border-radius: 5px;
-    margin: 20px 20px;
+    margin: 20px;
     padding: 5px;
-    
+    transform: scale(1);
 
 }
 

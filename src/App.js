@@ -1,15 +1,15 @@
 import './App.css';
 import BracketGrid from './BracketGrid.js'
 import Controls from './Controls.js'
-import teams from './Teams.js'
-import initState from './InitState.js'
+import teams from './Teams.json'
+import initState from './InitState.json'
 import {useState} from 'react'
 import {clearBracket, advanceTeam, randomizeBracket, checkProbability} from './Logic.js'
 import SaveBracket from './SaveBracket.js';
 
 function App() {
   const [state, setState] = useState(initState)
-  const [controls, setControls] = useState({useB: true, useK: true, useS: true, useM: true})
+  const [controls, setControls] = useState({useB: true, useK: true, useE: true, useM: true, useT: true, useH: true})
 
 
   return (

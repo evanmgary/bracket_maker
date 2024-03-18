@@ -79,12 +79,12 @@ function BracketGrid(props){
             row = (seed - 1) * (2 ** round) + (2 ** (round - 1))        
         }
         if(round === 6){
-            row = seed === 1 ? 16: 16 + 35
+            row = 33
         }
         if (round === 7){
             row = 33
         }
-        if (region === 'E' || region === 'W'){
+        if (region === 'W' || region === 'M'){
             row += 35
         }
         return row + offset
@@ -95,13 +95,16 @@ function BracketGrid(props){
         const round = parseInt(id[0])
         const region = id[1]
         const offset = 0
-        if (region === 'S' || region === 'E'){
+        if (region === 'E' || region === 'W'){
             return (round * 2 - 1) + offset
         }
-        if (region === 'M' || region === 'W'){
+        if (region === 'M' || region === 'S'){
             return 22 - (round * 2 - 1) + offset
         }
         if (region === 'F'){
+            if (round === 6){
+                return 11 + offset - (parseInt(id[2]) === 1 ? 2 : -2)
+            }
             return 11 + offset
         }
         return null
@@ -118,21 +121,16 @@ function BracketGrid(props){
             let col = findCol(key)
             let reverse = 1
             
-            if (key[1] === 'M' || key[1] === 'W'){
+            if (key[1] === 'M' || key[1] === 'S'){
                 reverse = -1
             }
-            //lines for semifinals
-            if (round === 4){
-                lineSlots.push({loc: [row, col + reverse], type:"horizontal"})
-            }
-            // Bracket lines for the finals
+            //lines for finals
             if (round === 6){
-                for (let i = row; i < findRow("6F2") - row; i++){
-                    lineSlots.push({loc: [row + i, col], type:"vertical"})
-                    lineSlots.push({loc: [row - i, col], type:"vertical"})
-                }
-                continue
+                lineSlots.push({loc: [row, col + reverse], type:"horizontal"})
+                lineSlots.push({loc: [row, col - reverse], type:"horizontal"})
+                break
             }
+           
             // Curved lines for rounds 1-4
             if (round >= 1){
                 lineSlots.push({loc: [row - (2 ** (round - 1)), col], type: (reverse > 0 ? "up-left": "up-right")})

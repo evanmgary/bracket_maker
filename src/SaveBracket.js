@@ -6,7 +6,7 @@ export default function SaveBracket(props){
     const [saveMode, setSaveMode] = useState(true)
     let name = ""
     const [popupVisible, setPopupVisible] = useState(false)
-    let statusText = ""
+    const [statusText, setStatusText] = useState("")
 
     function handleOpenSave(){
         setSaveMode(true)
@@ -17,30 +17,45 @@ export default function SaveBracket(props){
         setPopupVisible(true)
     }
     function handleSaveRetrieve(){
+        
+        if(name.length < 1){
+            setStatusText("Bracket must be named.")
+            return
+        }
         if (saveMode){
-            axios.post('http://localhost:4000',{
+            console.log(name)
+            axios.post('http://localhost:4000/brackets',{
                 name: name,
                 user: "not implemented yet",
                 state: saveState()
             })
             .then((response) => {
-                statusText = response
+                setStatusText("Bracket saved.")
             }, (error) => {
-                statusText = error
+                setStatusText(JSON.stringify(error))
             })
         }
         if (!saveMode){
-            axios.get('http://localhost:4000/' + name)
+            axios.get('http://localhost:4000/brackets/' + name)
             .then((response) => {
-                statusText = response
-                decodeState()
+                setStatusText("Bracket retrieved.")
+                decodeState(response.data.state)
             }, (error) => {
-                statusText = error
+                setStatusText(JSON.stringify(error))
             })
         }
     }
     function handleUpdate(){
-        return
+        axios.put('http://localhost:4000/brackets/',{
+                name: name,
+                user: "not implemented yet",
+                state: saveState()
+            })
+            .then((response) => {
+                setStatusText("Bracket saved.")
+            }, (error) => {
+                setStatusText(JSON.stringify(error))
+            })
     }
 
     function handleClose(){
@@ -48,8 +63,8 @@ export default function SaveBracket(props){
     }
     function saveState(){
         let arr = []
-        for (let key in props.state){
-            if (!key[0] === 1){
+        for (let key of Object.keys(props.state)){
+            if (key[0] !== "1"){
                 arr.push({slot: key, team: props.state[key].team})
             }
         }
@@ -57,14 +72,15 @@ export default function SaveBracket(props){
     }
     function decodeState(arr){
         let newState = {}
-        for (let key in props.state){
-            if (key[0] === 1){
+        for (let key of Object.keys(props.state)){
+            if (key[0] === "1"){
                 newState[key] = {...props.state[key]}
             }
         }
-        for (let obj of arr.state){
+        for (let obj of arr){
             newState[obj.slot] = {...props.state[obj.slot], id: obj.slot, team: obj.team} 
         }
+        console.log(newState)
         props.setState(newState)
     }
 
@@ -80,9 +96,9 @@ export default function SaveBracket(props){
             <div className="savePopup" style={{"visibility": popupVisible ? "visible" : "hidden"}}>
                 <button className="closeButton" onClick={handleClose} >X</button>
                 <input type="text" className="input" placeholder={saveMode ? "Enter your bracket name" : "Enter a saved bracket name"} onChange={(e) => name = e.target.value}/>
-                <p className="statusText">{statusText}</p>
+                <p id="statusText" className="statusText">{statusText}</p>
                 <button className="saveRetrieveButton" onClick={handleSaveRetrieve}>{saveMode ? "Save Bracket" : "Retrieve Bracket"}</button>
-                <button className="updateButton" onClick={handleUpdate}>Update Bracket</button>
+                {saveMode && <button className="updateButton" onClick={handleUpdate}>Update Bracket</button>}
             </div>
         </div>
     )
