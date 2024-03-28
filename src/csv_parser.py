@@ -7,7 +7,6 @@ import json
 team_file = open("./src/2024stats.csv", "r")
 data = team_file.readlines()
 headers = data[0].split(",")
-data.pop(0)
 output = "{\n\t"
 # "Connecticut" : {"name" : "Connecticut", "region" : "W", "seed" : 4, bpi: 18.3},\n\t
 teamjson = {}
@@ -48,7 +47,7 @@ for i in range(16):
 for i in range(8):
     output_2 = output_2 + f'"{ids4[i]}" : {{"id" : "{ids4[i]}", "team" : null, "pred1" : "3{ids4[i][1]}{int(ids4[i][2]) * 2 - 1}", "pred2" : "3{ids4[i][1]}{int(ids4[i][2]) * 2}", "succ" : "5{ids4[i][1]}{math.floor(((int(ids4[i][2]) - 1) / 2) + 1)}"}},' + '\n\t'
 for i in range(4):
-    output_2 = output_2 + f'"{ids5[i]}" : {{"id" : "{ids5[i]}", "team" : null, "pred1" : "4{ids5[i][1]}{int(ids5[i][2]) * 2 - 1}", "pred2" : "4{ids5[i][1]}{int(ids5[i][2]) * 2}", "succ" : "6F{math.floor(((int(ids5[i][2]) - 1) / 2) + 1)}"}},' + '\n\t'
+    output_2 = output_2 + f'"{ids5[i]}" : {{"id" : "{ids5[i]}", "team" : null, "pred1" : "4{ids5[i][1]}{int(ids5[i][2]) * 2 - 1}", "pred2" : "4{ids5[i][1]}{int(ids5[i][2]) * 2}", "succ" : "6F{"1" if ids5[i][1] == "E" or ids5[i][1] == "W" else "2"}"}},' + '\n\t'
 output_2 = output_2 + '"6F1" : {"id" : "6F1", "team" : null, "pred1" : "5E1", "pred2" : "5W1", "succ" : "7F1"},\n\t'
 output_2 = output_2 + '"6F2" : {"id" : "6F2", "team" : null, "pred1" : "5S1", "pred2" : "5M1", "succ" : "7F1"},\n\t'
 output_2 = output_2 + '"7F1" : {"id" : "7F1", "team" : null, "pred1" : "6F1", "pred2" : "6F2", "succ" : null},\n\t'

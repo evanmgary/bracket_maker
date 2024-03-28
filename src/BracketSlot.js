@@ -14,12 +14,12 @@ function BracketSlot(props){
     let teamPred2 = pred2.team != null ? props.teams[pred2.team] : null
     
     //Make style objects for data in tooltips
-    let bStyle = {textDecoration: props.controls.useB ? "none" : "line-through"}
     let kStyle = {textDecoration: props.controls.useK ? "none" : "line-through"}
     let eStyle = {textDecoration: props.controls.useE ? "none" : "line-through"}
-    let mStyle = {textDecoration: props.controls.useM ? "none" : "line-through"}
     let tStyle = {textDecoration: props.controls.useT ? "none" : "line-through"}
     let hStyle = {textDecoration: props.controls.useH ? "none" : "line-through"}
+    let bStyle = {textDecoration: props.controls.useB ? "none" : "line-through"}
+    let mStyle = {textDecoration: props.controls.useM ? "none" : "line-through"}
 
     function tooltip(){
         if (props.id[0] === '1'){
@@ -34,24 +34,51 @@ function BracketSlot(props){
         }
         return (
             <div className="tooltipBox">
-                <div className="tooltipText tooltipTeam1">{`(${teamPred1.seed}) ${teamPred1.name}`}</div>
-                <div className="tooltipText tooltipTeam1">
-                    <span className="bData" style={bStyle}>BPI: {teamPred1.b} </span>
-                    <span className="kData" style={kStyle}>Kenpom: {teamPred1.k} </span>
-                    <span className="eData" style={eStyle}>EvanMiya: {teamPred1.e} </span>
-                    <span className="mData" style={mStyle}>Moore: {teamPred1.m}</span>
-                    <span className="tData" style={tStyle}>T Rank: {teamPred1.t}</span>
-                    <span className="hData" style={hStyle}>Haslam: {teamPred1.h}</span>
-                </div>
-                <div className="tooltipText tooltipTeam2">{`(${teamPred2.seed}) ${teamPred2.name}`}</div>
-                <div className="tooltipText tooltipTeam2">
-                    <span className="bData" style={bStyle}>BPI: {teamPred2.b} </span>
-                    <span className="kData" style={kStyle}>KenPom: {teamPred2.k} </span>
-                    <span className="eData" style={eStyle}>EvanMiya: {teamPred2.e} </span>
-                    <span className="mData" style={mStyle}>Moore: {teamPred2.m}</span>
-                    <span className="tData" style={tStyle}>T Rank: {teamPred2.t}</span>
-                    <span className="hData" style={hStyle}>Haslam: {teamPred2.h}</span>
-                </div>
+                
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>{`(${teamPred1.seed}) ${teamPred1.name}`}</th>
+                        <th>Probability</th>
+                        <th>{`(${teamPred2.seed}) ${teamPred2.name}`}</th>
+                    </tr>
+                    <tr className="tooltipRow">
+                        <td className="bData" style={bStyle}>BPI:</td>
+                        <td className="bData" style={bStyle}>{teamPred1.b}</td>
+                        <td className="bData" style={bStyle}>{props.checkOneProbability(teamPred1.b, teamPred2.b, "b").toFixed(2)}</td>
+                        <td className="bData" style={bStyle}>{teamPred2.b}</td>
+                    </tr>
+                    <tr className="tooltipRow">
+                        <td className="kData" style={kStyle}>KenPom:</td>
+                        <td className="kData" style={kStyle}>{teamPred1.k}</td>
+                        <td className="kData" style={kStyle}>{props.checkOneProbability(teamPred1.k, teamPred2.k, "k").toFixed(2)}</td>
+                        <td className="kData" style={kStyle}>{teamPred2.k}</td>
+                    </tr>
+                    <tr className="tooltipRow">
+                        <td className="eData" style={eStyle}>Evan Miya:</td>
+                        <td className="eData" style={eStyle}>{teamPred1.e}</td>
+                        <td className="eData" style={eStyle}>{props.checkOneProbability(teamPred1.e, teamPred2.e, "e").toFixed(2)}</td>
+                        <td className="eData" style={eStyle}>{teamPred2.e}</td>
+                    </tr>
+                    <tr className="tooltipRow">
+                        <td className="mData" style={mStyle}>Moore:</td>
+                        <td className="mData" style={mStyle}>{teamPred1.m}</td>
+                        <td className="mData" style={mStyle}>{props.checkOneProbability(teamPred1.m, teamPred2.m, "m").toFixed(2)}</td>
+                        <td className="mData" style={mStyle}>{teamPred2.m}</td>
+                    </tr>
+                    <tr className="tooltipRow">
+                        <td className="tData" style={tStyle}>T Rank:</td>
+                        <td className="tData" style={tStyle}>{teamPred1.t}</td>
+                        <td className="tData" style={tStyle}>{props.checkOneProbability(teamPred1.t, teamPred2.t, "t").toFixed(2)}</td>
+                        <td className="tData" style={tStyle}>{teamPred2.t}</td>
+                    </tr>
+                    <tr className="tooltipRow">
+                        <td className="hData" style={hStyle}>Haslam:</td>
+                        <td className="hData" style={hStyle}>{teamPred1.h}</td>
+                        <td className="bData" style={bStyle}>{props.checkOneProbability(teamPred1.h, teamPred2.h, "h").toFixed(2)}</td>
+                        <td className="hData" style={hStyle}>{teamPred2.h}</td>
+                    </tr>
+                </table>
                 <div className="tooltipText probabilityText">{teamPred1.name} probability: {props.checkProbability(teamPred1.name, teamPred2.name, props.teams, props.controls).toFixed(2)}</div>
             </div>
         )

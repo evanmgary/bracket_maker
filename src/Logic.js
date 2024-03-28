@@ -1,3 +1,12 @@
+const normRanges = {
+    "b": [-5, 25],
+    "k": [-10, 40],
+    "e": [-20, 35],
+    "m": [50, 100],
+    "t": [0, 1],
+    "h": [0, 1.02]
+}
+
 export function clearBracket(initState, setState){
     setState(initState)
 }
@@ -88,33 +97,42 @@ export function advanceTeam(id, state, setState, teams, controls){
 }
 
 export function checkProbability(team1, team2, teams, controls){
-    let team1b = normalize(teams[team1].b, -5, 20)
-    let team2b = normalize(teams[team2].b, -5, 20)
-    let team1k = normalize(teams[team1].k, -10, 30)
-    let team2k = normalize(teams[team2].k, -10, 30)
-    let team1e = normalize(teams[team1].e, 60, 100)
-    let team2e = normalize(teams[team2].e, 60, 100)
-    let team1m = normalize(teams[team1].m, 65, 105)
-    let team2m = normalize(teams[team2].m, 65, 105)
-    let team1t = normalize(teams[team1].t, 0, 1)
-    let team2t = normalize(teams[team2].t, 0, 1)
-    let team1h = normalize(teams[team1].h, 0, 1)
-    let team2h = normalize(teams[team2].h, 0, 1)
+    let team1b = normalize(teams[team1].b, 'b')
+    let team2b = normalize(teams[team2].b, 'b')
+    let team1k = normalize(teams[team1].k, 'k')
+    let team2k = normalize(teams[team2].k, 'k')
+    let team1e = normalize(teams[team1].e, 'e')
+    let team2e = normalize(teams[team2].e, 'e')
+    let team1m = normalize(teams[team1].m, 'm')
+    let team2m = normalize(teams[team2].m, 'm')
+    let team1t = normalize(teams[team1].t, 't')
+    let team2t = normalize(teams[team2].t, 't')
+    let team1h = normalize(teams[team1].h, 'h')
+    let team2h = normalize(teams[team2].h, 'h')
     let numIndex = (controls.useB ? 1 : 0) + (controls.useK ? 1 : 0) + (controls.useE ? 1 : 0) + (controls.useM ? 1 : 0) + (controls.useT ? 1 : 0) + (controls.useH ? 1 : 0)
     if (numIndex < 0.1){
         return 0.5
     }
     let powerRank1 = ((controls.useB ? team1b : 0) + (controls.useK ? team1k : 0) + (controls.useE ? team1e : 0) + (controls.useM ? team1m : 0) + (controls.useT ? team1t : 0) + (controls.useH ? team1h : 0)) / numIndex
-    let powerRank2 = ((controls.useB ? team2b : 0) + (controls.useK ? team2k : 0) + (controls.useE ? team2e : 0) + (controls.useM ? team2m : 0) + (controls.useM ? team2t : 0) + (controls.useM ? team2h : 0)) / numIndex
-    let diff = powerRank1 - powerRank2
+    let powerRank2 = ((controls.useB ? team2b : 0) + (controls.useK ? team2k : 0) + (controls.useE ? team2e : 0) + (controls.useM ? team2m : 0) + (controls.useT ? team2t : 0) + (controls.useH ? team2h : 0)) / numIndex
+    //let diff = powerRank1 - powerRank2
     // Y = 68*X + 50
-    const calc = (.78 * diff + .50)
+    // Log5 formula
+    const calc = (powerRank1 - (powerRank1*powerRank2))/(powerRank1+powerRank2-(2*powerRank1*powerRank2))
+    //const calc = (.78 * diff + .50)
     return calc < 1 ? calc : 0.993
     //return 0.5 + 0.005 * diff
 }
 
-export function normalize(val, min, max){
-    
+export function checkOneProbability(team1, team2, metric){
+    const a = normalize(team1, metric)
+    const b = normalize(team2, metric)
+    return (a - (a*b))/(a+b-(2*a*b))
+}
+
+export function normalize(val, metric){
+    const min = normRanges[metric][0]
+    const max = normRanges[metric][1]
     return (val - min) / (max - min)
 }
 
