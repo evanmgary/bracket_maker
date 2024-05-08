@@ -9,10 +9,12 @@ export default function SaveBracket(props){
     const [statusText, setStatusText] = useState("")
 
     function handleOpenSave(){
+        setStatusText("")
         setSaveMode(true)
         setPopupVisible(true)
     }
     function handleOpenRetrieve(){
+        setStatusText("")
         setSaveMode(false)
         setPopupVisible(true)
     }
@@ -24,7 +26,7 @@ export default function SaveBracket(props){
         }
         if (saveMode){
             console.log(name)
-            axios.post('http://localhost:4000/brackets',{
+            axios.post('https://evanmgary-portfolio.vercel.app/api/bracket',{
                 name: name,
                 user: "not implemented yet",
                 state: saveState()
@@ -36,7 +38,7 @@ export default function SaveBracket(props){
             })
         }
         if (!saveMode){
-            axios.get('http://localhost:4000/brackets/' + name)
+            axios.get('https://evanmgary-portfolio.vercel.app/api/bracket/' + name)
             .then((response) => {
                 setStatusText("Bracket retrieved.")
                 decodeState(response.data.state)
@@ -46,7 +48,7 @@ export default function SaveBracket(props){
         }
     }
     function handleUpdate(){
-        axios.put('http://localhost:4000/brackets/',{
+        axios.put('https://evanmgary-portfolio.vercel.app/api/bracket',{
                 name: name,
                 user: "not implemented yet",
                 state: saveState()
@@ -60,6 +62,7 @@ export default function SaveBracket(props){
 
     function handleClose(){
         setPopupVisible(false)
+        setStatusText("")
     }
     function saveState(){
         let arr = []
