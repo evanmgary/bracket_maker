@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/bracket-maker/static/css/main.78ab5fa0.css",
-    "main.js": "/bracket-maker/static/js/main.f25210bc.js",
-    "static/js/787.b9a466d8.chunk.js": "/bracket-maker/static/js/787.b9a466d8.chunk.js",
-    "index.html": "/bracket-maker/index.html",
-    "main.78ab5fa0.css.map": "/bracket-maker/static/css/main.78ab5fa0.css.map",
-    "main.f25210bc.js.map": "/bracket-maker/static/js/main.f25210bc.js.map",
-    "787.b9a466d8.chunk.js.map": "/bracket-maker/static/js/787.b9a466d8.chunk.js.map"
+    "main.css": "/bracket_maker/static/css/main.78ab5fa0.css",
+    "main.js": "/bracket_maker/static/js/main.106da6a8.js",
+    "static/js/787.b9a466d8.chunk.js": "/bracket_maker/static/js/787.b9a466d8.chunk.js",
+    "index.html": "/bracket_maker/index.html",
+    "main.78ab5fa0.css.map": "/bracket_maker/static/css/main.78ab5fa0.css.map",
+    "main.106da6a8.js.map": "/bracket_maker/static/js/main.106da6a8.js.map",
+    "787.b9a466d8.chunk.js.map": "/bracket_maker/static/js/787.b9a466d8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.78ab5fa0.css",
-    "static/js/main.f25210bc.js"
+    "static/js/main.106da6a8.js"
   ]
 }
