@@ -5,11 +5,8 @@
     background-color: rgb(255, 255, 255);
     grid-template-columns: repeat(21, 1fr);
     grid-template-rows: repeat(67, 1fr);
-    border: 3px solid black;
-    border-radius: 5px;
     margin: 20px;
     padding: 5px;
-    transform: scale(1);
 
 }
 
