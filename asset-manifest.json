@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/bracket_maker/static/css/main.78ab5fa0.css",
+    "main.css": "/bracket_maker/static/css/main.af909a80.css",
     "main.js": "/bracket_maker/static/js/main.106da6a8.js",
     "static/js/787.b9a466d8.chunk.js": "/bracket_maker/static/js/787.b9a466d8.chunk.js",
     "index.html": "/bracket_maker/index.html",
-    "main.78ab5fa0.css.map": "/bracket_maker/static/css/main.78ab5fa0.css.map",
+    "main.af909a80.css.map": "/bracket_maker/static/css/main.af909a80.css.map",
     "main.106da6a8.js.map": "/bracket_maker/static/js/main.106da6a8.js.map",
     "787.b9a466d8.chunk.js.map": "/bracket_maker/static/js/787.b9a466d8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78ab5fa0.css",
+    "static/css/main.af909a80.css",
     "static/js/main.106da6a8.js"
   ]
 }
