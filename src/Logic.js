@@ -1,17 +1,20 @@
 const normRanges = {
-    "b": [-5, 25],
-    "k": [-10, 40],
-    "e": [-20, 35],
+    "b": [-12, 30],
+    "k": [-14, 40],
+    "e": [-12, 40],
     "m": [50, 100],
-    "t": [0, 1],
-    "h": [0, 1.02]
+    "t": [0.2, 1.003],
+    "h": [0.15, 1.02],
+    "wr": [0.50, 0.75],
+    "wm": [2, 10],
+    "wt": [0.15, 1.003]
 }
 
 export function clearBracket(initState, setState){
-    setState(initState)
+    setState(prev => initState)
 }
 
-export function randomizeBracket(state, setState, teams, controls){
+export function randomizeBracket(state, setState, teams, controls, isMen){
     const order = ["2S1", "2S2", "2S3", "2S4", "2S5", "2S6", "2S7", "2S8", "2E1", "2E2", "2E3", "2E4", "2E5", "2E6", "2E7", "2E8","2M1", "2M2", "2M3",
 "2M4", "2M5", "2M6", "2M7", "2M8", "2W1", "2W2", "2W3", "2W4", "2W5", "2W6", "2W7", "2W8",
 "3S1", "3S2", "3S3", "3S4", "3E1", "3E2", "3E3", "3E4", "3M1", "3M2", "3M3", "3M4", "3W1", "3W2", "3W3", "3W4",
@@ -25,7 +28,7 @@ export function randomizeBracket(state, setState, teams, controls){
         // pred1team and pred2team are team names, not ids
         let pred1team = stateCopy[stateCopy[currId].pred1].team
         let pred2team = stateCopy[stateCopy[currId].pred2].team
-        let chance = checkProbability(pred1team, pred2team, teams, controls)
+        let chance = isMen ? checkProbability(pred1team, pred2team, teams, controls) : checkProbabilityW(pred1team, pred2team, teams, controls)
         let randNum = Math.random()
         let result = ""
         if (randNum < chance){
@@ -40,7 +43,7 @@ export function randomizeBracket(state, setState, teams, controls){
     setState(stateCopy)
 }
 
-export function advanceTeam(id, state, setState, teams, controls){
+export function advanceTeam(id, state, setState, teams, controls, isMen){
     //This will randomly pick a team to advance from the previous round if a blank slot is clicked, otherwise will advance the team in the slot
     if (state[id].team == null){
         let pred1team = state[state[id].pred1].team
@@ -48,7 +51,8 @@ export function advanceTeam(id, state, setState, teams, controls){
         if (!pred1team || !pred2team){
             return
         }
-        let chance = checkProbability(pred1team, pred2team, teams, controls)
+        let chance = isMen ? checkProbability(pred1team, pred2team, teams, controls) : checkProbabilityW(pred1team, pred2team, teams, controls)
+        console.log(pred1team + "    " + pred2team + "   " + chance + " " + isMen)
         let randNum = Math.random()
         let result = ""
         if (randNum < chance){
@@ -115,6 +119,29 @@ export function checkProbability(team1, team2, teams, controls){
     }
     let powerRank1 = ((controls.useB ? team1b : 0) + (controls.useK ? team1k : 0) + (controls.useE ? team1e : 0) + (controls.useM ? team1m : 0) + (controls.useT ? team1t : 0) + (controls.useH ? team1h : 0)) / numIndex
     let powerRank2 = ((controls.useB ? team2b : 0) + (controls.useK ? team2k : 0) + (controls.useE ? team2e : 0) + (controls.useM ? team2m : 0) + (controls.useT ? team2t : 0) + (controls.useH ? team2h : 0)) / numIndex
+    //let diff = powerRank1 - powerRank2
+    // Y = 68*X + 50
+    // Log5 formula
+    const calc = (powerRank1 - (powerRank1*powerRank2))/(powerRank1+powerRank2-(2*powerRank1*powerRank2))
+    //const calc = (.78 * diff + .50)
+    return calc < 1 ? calc : 0.993
+    //return 0.5 + 0.005 * diff
+}
+
+export function checkProbabilityW(team1, team2, teams, controls){
+    let team1wr = normalize(teams[team1].wr, 'wr')
+    let team2wr = normalize(teams[team2].wr, 'wr')
+    let team1wm = normalize(teams[team1].wm, 'wm')
+    let team2wm = normalize(teams[team2].wm, 'wm')
+    let team1wt = normalize(teams[team1].wt, 'wt')
+    let team2wt = normalize(teams[team2].wt, 'wt')
+
+    let numIndex = (controls.useWR ? 1 : 0) + (controls.useWM ? 1 : 0) + (controls.useWT ? 1 : 0) 
+    if (numIndex < 0.1){
+        return 0.5
+    }
+    let powerRank1 = ((controls.useWR ? team1wr : 0) + (controls.useWM ? team1wm : 0) + (controls.useWT ? team1wt : 0)) / numIndex
+    let powerRank2 = ((controls.useWR ? team2wr : 0) + (controls.useWM ? team2wm : 0) + (controls.useWT ? team2wt : 0)) / numIndex
     //let diff = powerRank1 - powerRank2
     // Y = 68*X + 50
     // Log5 formula

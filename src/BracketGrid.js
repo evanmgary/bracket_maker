@@ -95,10 +95,10 @@ function BracketGrid(props){
         const round = parseInt(id[0])
         const region = id[1]
         const offset = 0
-        if (region === 'E' || region === 'W'){
+        if (region === 'S' || region === 'W'){
             return (round * 2 - 1) + offset
         }
-        if (region === 'M' || region === 'S'){
+        if (region === 'E' || region === 'M'){
             return 22 - (round * 2 - 1) + offset
         }
         if (region === 'F'){
@@ -121,7 +121,7 @@ function BracketGrid(props){
             let col = findCol(key)
             let reverse = 1
             
-            if (key[1] === 'M' || key[1] === 'S'){
+            if (key[1] === 'E' || key[1] === 'M'){
                 reverse = -1
             }
             //lines for finals
@@ -157,7 +157,7 @@ function BracketGrid(props){
                 
                     let row = findRow(key)
                     let col = findCol(key)
-                    return <BracketSlot id={key} team={state[key].team} state={state} setState={props.setState} teams={props.teams} row={row} column={col} controls={props.controls} advanceTeam={props.advanceTeam} checkProbability={props.checkProbability} checkOneProbability={props.checkOneProbability}/>
+                    return <BracketSlot key={key} id={key} team={state[key].team} state={state} setState={props.setState} teams={props.teams} isMens={props.isMens} row={row} column={col} controls={props.controls} advanceTeam={props.advanceTeam} checkProbability={props.checkProbability} checkProbabilityW={props.checkProbabilityW} checkOneProbability={props.checkOneProbability}/>
                 
                 })
             }

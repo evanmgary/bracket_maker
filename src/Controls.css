@@ -1,11 +1,15 @@
 .controlBox{
     display: inline-flex;
     height: 50px;
-    width: 26vw;
+    width: 40vw;
     border: 3px;
     border-style: solid;
     align-self: center;
     gap: 10px;
     align-items: center;
-    
+    margin-top: 12px;
+}
+
+.controlButton{
+    margin-right: 10px
 }

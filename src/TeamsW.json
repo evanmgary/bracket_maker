@@ -1,0 +1,514 @@
+{
+    "UCLA": {
+        "name": "UCLA",
+        "seed": 1,
+        "region": "S",
+        "wr": 0.7076,
+        "wm": 9.02,
+        "wt": 0.9951
+    },
+    "NC State": {
+        "name": "NC State",
+        "seed": 2,
+        "region": "S",
+        "wr": 0.6685,
+        "wm": 8.54,
+        "wt": 0.9922
+    },
+    "LSU": {
+        "name": "LSU",
+        "seed": 3,
+        "region": "S",
+        "wr": 0.6602,
+        "wm": 8.66,
+        "wt": 0.9863
+    },
+    "Baylor": {
+        "name": "Baylor",
+        "seed": 4,
+        "region": "S",
+        "wr": 0.6073,
+        "wm": 8.43,
+        "wt": 0.9929
+    },
+    "Mississippi": {
+        "name": "Mississippi",
+        "seed": 5,
+        "region": "S",
+        "wr": 0.5746,
+        "wm": 8.22,
+        "wt": 0.9858
+    },
+    "Florida St.": {
+        "name": "Florida St.",
+        "seed": 6,
+        "region": "S",
+        "wr": 0.5992,
+        "wm": 8.14,
+        "wt": 0.9695
+    },
+    "Michigan St.": {
+        "name": "Michigan St.",
+        "seed": 7,
+        "region": "S",
+        "wr": 0.6067,
+        "wm": 8.13,
+        "wt": 0.9719
+    },
+    "Richmond": {
+        "name": "Richmond",
+        "seed": 8,
+        "region": "S",
+        "wr": 0.6133,
+        "wm": 7.61,
+        "wt": 0.9283
+    },
+    "Georgia Tech": {
+        "name": "Georgia Tech",
+        "seed": 9,
+        "region": "S",
+        "wr": 0.5795,
+        "wm": 7.93,
+        "wt": 0.9309
+    },
+    "Harvard": {
+        "name": "Harvard",
+        "seed": 10,
+        "region": "S",
+        "wr": 0.6052,
+        "wm": 7.6,
+        "wt": 0.9149
+    },
+    "George Mason": {
+        "name": "George Mason",
+        "seed": 11,
+        "region": "S",
+        "wr": 0.6026,
+        "wm": 7.43,
+        "wt": 0.9461
+    },
+    "Ball St.": {
+        "name": "Ball St.",
+        "seed": 12,
+        "region": "S",
+        "wr": 0.5962,
+        "wm": 7.3,
+        "wt": 0.7539
+    },
+    "Grand Canyon": {
+        "name": "Grand Canyon",
+        "seed": 13,
+        "region": "S",
+        "wr": 0.588,
+        "wm": 7.5,
+        "wt": 0.8416
+    },
+    "San Diego St.": {
+        "name": "San Diego St.",
+        "seed": 14,
+        "region": "S",
+        "wr": 0.4084,
+        "wm": 7.0,
+        "wt": 0.8341
+    },
+    "Vermont": {
+        "name": "Vermont",
+        "seed": 15,
+        "region": "S",
+        "wr": 0.5529,
+        "wm": 6.45,
+        "wt": 0.8093
+    },
+    "Southern": {
+        "name": "Southern",
+        "seed": 16,
+        "region": "S",
+        "wr": 0.5042,
+        "wm": 5.72,
+        "wt": 0.4518
+    },
+    "USC": {
+        "name": "USC",
+        "seed": 1,
+        "region": "W",
+        "wr": 0.6838,
+        "wm": 8.86,
+        "wt": 0.9943
+    },
+    "Connecticut": {
+        "name": "Connecticut",
+        "seed": 2,
+        "region": "W",
+        "wr": 0.6912,
+        "wm": 9.08,
+        "wt": 0.999
+    },
+    "Oklahoma": {
+        "name": "Oklahoma",
+        "seed": 3,
+        "region": "W",
+        "wr": 0.6409,
+        "wm": 8.47,
+        "wt": 0.9889
+    },
+    "Kentucky": {
+        "name": "Kentucky",
+        "seed": 4,
+        "region": "W",
+        "wr": 0.6241,
+        "wm": 8.15,
+        "wt": 0.9899
+    },
+    "Kansas St.": {
+        "name": "Kansas St.",
+        "seed": 5,
+        "region": "W",
+        "wr": 0.6443,
+        "wm": 8.33,
+        "wt": 0.9704
+    },
+    "Iowa": {
+        "name": "Iowa",
+        "seed": 6,
+        "region": "W",
+        "wr": 0.6149,
+        "wm": 8.28,
+        "wt": 0.9916
+    },
+    "Oklahoma St.": {
+        "name": "Oklahoma St.",
+        "seed": 7,
+        "region": "W",
+        "wr": 0.6061,
+        "wm": 8.16,
+        "wt": 0.9785
+    },
+    "California": {
+        "name": "California",
+        "seed": 8,
+        "region": "W",
+        "wr": 0.6235,
+        "wm": 7.98,
+        "wt": 0.9724
+    },
+    "Mississippi St.": {
+        "name": "Mississippi St.",
+        "seed": 9,
+        "region": "W",
+        "wr": 0.5674,
+        "wm": 7.94,
+        "wt": 0.96
+    },
+    "South Dakota St.": {
+        "name": "South Dakota St.",
+        "seed": 10,
+        "region": "W",
+        "wr": 0.4421,
+        "wm": 6.08,
+        "wt": 0.9214
+    },
+    "Murray St.": {
+        "name": "Murray St.",
+        "seed": 11,
+        "region": "W",
+        "wr": 0.5617,
+        "wm": 7.3,
+        "wt": 0.9033
+    },
+    "Fairfield": {
+        "name": "Fairfield",
+        "seed": 12,
+        "region": "W",
+        "wr": 0.5943,
+        "wm": 7.1,
+        "wt": 0.8169
+    },
+    "Liberty": {
+        "name": "Liberty",
+        "seed": 13,
+        "region": "W",
+        "wr": 0.5859,
+        "wm": 7.24,
+        "wt": 0.881
+    },
+    "FGCU": {
+        "name": "FGCU",
+        "seed": 14,
+        "region": "W",
+        "wr": 0.5843,
+        "wm": 7.36,
+        "wt": 0.8742
+    },
+    "Arkansas St.": {
+        "name": "Arkansas St.",
+        "seed": 15,
+        "region": "W",
+        "wr": 0.5151,
+        "wm": 6.59,
+        "wt": 0.7348
+    },
+    "UNC Greensboro": {
+        "name": "UNC Greensboro",
+        "seed": 16,
+        "region": "W",
+        "wr": 0.542,
+        "wm": 6.65,
+        "wt": 0.6867
+    },
+    "South Carolina": {
+        "name": "South Carolina",
+        "seed": 1,
+        "region": "E",
+        "wr": 0.7165,
+        "wm": 9.38,
+        "wt": 0.9977
+    },
+    "Duke": {
+        "name": "Duke",
+        "seed": 2,
+        "region": "E",
+        "wr": 0.6853,
+        "wm": 8.58,
+        "wt": 0.9936
+    },
+    "North Carolina": {
+        "name": "North Carolina",
+        "seed": 3,
+        "region": "E",
+        "wr": 0.6399,
+        "wm": 8.31,
+        "wt": 0.959
+    },
+    "Maryland": {
+        "name": "Maryland",
+        "seed": 4,
+        "region": "E",
+        "wr": 0.6299,
+        "wm": 8.26,
+        "wt": 0.9785
+    },
+    "Alabama": {
+        "name": "Alabama",
+        "seed": 5,
+        "region": "E",
+        "wr": 0.6275,
+        "wm": 8.19,
+        "wt": 0.9892
+    },
+    "West Virginia": {
+        "name": "West Virginia",
+        "seed": 6,
+        "region": "E",
+        "wr": 0.6308,
+        "wm": 8.33,
+        "wt": 0.9894
+    },
+    "Vanderbilt": {
+        "name": "Vanderbilt",
+        "seed": 7,
+        "region": "E",
+        "wr": 0.5874,
+        "wm": 8.04,
+        "wt": 0.9701
+    },
+    "Utah": {
+        "name": "Utah",
+        "seed": 8,
+        "region": "E",
+        "wr": 0.6139,
+        "wm": 8.13,
+        "wt": 0.9656
+    },
+    "Indiana": {
+        "name": "Indiana",
+        "seed": 9,
+        "region": "E",
+        "wr": 0.6015,
+        "wm": 8.0,
+        "wt": 0.9846
+    },
+    "Oregon": {
+        "name": "Oregon",
+        "seed": 10,
+        "region": "E",
+        "wr": 0.5985,
+        "wm": 7.85,
+        "wt": 0.8957
+    },
+    "Columbia": {
+        "name": "Columbia",
+        "seed": 11,
+        "region": "E",
+        "wr": 0.6004,
+        "wm": 7.55,
+        "wt": 0.9442
+    },
+    "Green Bay": {
+        "name": "Green Bay",
+        "seed": 12,
+        "region": "E",
+        "wr": 0.5784,
+        "wm": 7.26,
+        "wt": 0.8979
+    },
+    "Norfolk St.": {
+        "name": "Norfolk St.",
+        "seed": 13,
+        "region": "E",
+        "wr": 0.5727,
+        "wm": 7.1,
+        "wt": 0.9083
+    },
+    "Oregon St.": {
+        "name": "Oregon St.",
+        "seed": 14,
+        "region": "E",
+        "wr": 0.5454,
+        "wm": 7.19,
+        "wt": 0.8444
+    },
+    "Lehigh": {
+        "name": "Lehigh",
+        "seed": 15,
+        "region": "E",
+        "wr": 0.5799,
+        "wm": 6.65,
+        "wt": 0.7181
+    },
+    "Tennessee Tech": {
+        "name": "Tennessee Tech",
+        "seed": 16,
+        "region": "E",
+        "wr": 0.5765,
+        "wm": 6.76,
+        "wt": 0.7724
+    },
+    "Texas": {
+        "name": "Texas",
+        "seed": 1,
+        "region": "M",
+        "wr": 0.7081,
+        "wm": 9.14,
+        "wt": 0.9959
+    },
+    "TCU": {
+        "name": "TCU",
+        "seed": 2,
+        "region": "M",
+        "wr": 0.6584,
+        "wm": 8.63,
+        "wt": 0.9929
+    },
+    "Notre Dame": {
+        "name": "Notre Dame",
+        "seed": 3,
+        "region": "M",
+        "wr": 0.6464,
+        "wm": 8.77,
+        "wt": 0.9966
+    },
+    "Ohio St.": {
+        "name": "Ohio St.",
+        "seed": 4,
+        "region": "M",
+        "wr": 0.6551,
+        "wm": 8.43,
+        "wt": 0.9823
+    },
+    "Tennessee": {
+        "name": "Tennessee",
+        "seed": 5,
+        "region": "M",
+        "wr": 0.6163,
+        "wm": 8.36,
+        "wt": 0.9765
+    },
+    "Louisville": {
+        "name": "Louisville",
+        "seed": 6,
+        "region": "M",
+        "wr": 0.6251,
+        "wm": 8.13,
+        "wt": 0.9834
+    },
+    "Michigan": {
+        "name": "Michigan",
+        "seed": 7,
+        "region": "M",
+        "wr": 0.6301,
+        "wm": 8.12,
+        "wt": 0.9897
+    },
+    "Illinois": {
+        "name": "Illinois",
+        "seed": 8,
+        "region": "M",
+        "wr": 0.6039,
+        "wm": 7.83,
+        "wt": 0.9754
+    },
+    "Creighton": {
+        "name": "Creighton",
+        "seed": 9,
+        "region": "M",
+        "wr": 0.6571,
+        "wm": 8.09,
+        "wt": 0.9575
+    },
+    "Nebraska": {
+        "name": "Nebraska",
+        "seed": 10,
+        "region": "M",
+        "wr": 0.6029,
+        "wm": 7.86,
+        "wt": 0.9493
+    },
+    "Iowa St.": {
+        "name": "Iowa St.",
+        "seed": 11,
+        "region": "M",
+        "wr": 0.6008,
+        "wm": 8.07,
+        "wt": 0.9769
+    },
+    "South Florida": {
+        "name": "South Florida",
+        "seed": 12,
+        "region": "M",
+        "wr": 0.59,
+        "wm": 7.33,
+        "wt": 0.8291
+    },
+    "Montana St.": {
+        "name": "Montana St.",
+        "seed": 13,
+        "region": "M",
+        "wr": 0.5933,
+        "wm": 7.4,
+        "wt": 0.8971
+    },
+    "SF Austin": {
+        "name": "SF Austin",
+        "seed": 14,
+        "region": "M",
+        "wr": 0.4934,
+        "wm": 7.01,
+        "wt": 0.1512
+    },
+    "Fairleigh Dickinson": {
+        "name": "Fairleigh Dickinson",
+        "seed": 15,
+        "region": "M",
+        "wr": 0.5271,
+        "wm": 6.29,
+        "wt": 0.4396
+    },
+    "William & Mary": {
+        "name": "William & Mary",
+        "seed": 16,
+        "region": "M",
+        "wr": 0.489,
+        "wm": 5.91,
+        "wt": 0.1942
+    }
+}

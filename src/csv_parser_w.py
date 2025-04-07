@@ -4,7 +4,7 @@
 import math
 import json
 
-team_file = open("./src/2025stats.csv", "r")
+team_file = open("./src/2025statsw.csv", "r")
 data = team_file.readlines()
 headers = data[0].split(",")
 output = "{\n\t"
@@ -12,9 +12,9 @@ output = "{\n\t"
 teamjson = {}
 for line in data:
     teamdata = line.split(",")
-
-    teamjson[teamdata[0]] = {"name": teamdata[0], "seed": int(teamdata[2]), "region": teamdata[1], "b": float(teamdata[3]), "k":float(teamdata[4]), "e": float(teamdata[5]), "m": float(teamdata[6]), "t": float(teamdata[7]), "h": float(teamdata[8].strip())}
-out_file = open('./src/Teams.json', 'w')
+    print(teamdata)
+    teamjson[teamdata[0]] = {"name": teamdata[0], "seed": int(teamdata[2]), "region": teamdata[1], "wr": float(teamdata[3]), "wm":float(teamdata[4]), "wt": float(teamdata[5])}
+out_file = open('./src/TeamsW.json', 'w')
 out_file.write(json.dumps(teamjson, indent=4))
 out_file.close()
 team_file.close()
@@ -27,7 +27,6 @@ firstround = {1: 1, 2: 8, 3: 6, 4: 4, 5: 3, 6: 5, 7: 7, 8: 2, 9: 2, 10: 7, 11: 5
 output_2 = "{\n\t"
 for line in data:
     teamdata = line.split(",")
-    print(teamdata)
     name = teamdata[0]
     region = teamdata[1][0]
     seed = int(teamdata[2])
@@ -54,6 +53,6 @@ output_2 = output_2 + '"6F2" : {"id" : "6F2", "team" : null, "pred1" : "5E1", "p
 output_2 = output_2 + '"7F1" : {"id" : "7F1", "team" : null, "pred1" : "6F1", "pred2" : "6F2", "succ" : null},\n\t'
 output_2 = output_2[:-3]
 output_2 = output_2 + "\n}"
-out_file_2 = open('./src/InitState.json', 'w')
+out_file_2 = open('./src/InitStateW.json', 'w')
 out_file_2.write(output_2)
 out_file_2.close()

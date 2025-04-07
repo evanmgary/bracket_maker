@@ -29,7 +29,8 @@ export default function SaveBracket(props){
             axios.post('https://evanmgary-portfolio.vercel.app/api/bracket',{
                 name: name,
                 user: "not implemented yet",
-                state: saveState()
+                state: saveState(),
+                gender: props.isMens
             })
             .then((response) => {
                 setStatusText("Bracket saved.")
@@ -42,6 +43,7 @@ export default function SaveBracket(props){
             .then((response) => {
                 setStatusText("Bracket retrieved.")
                 decodeState(response.data.state)
+                props.setIsMens(response.data.gender)
             }, (error) => {
                 setStatusText(JSON.stringify(error))
             })
@@ -51,7 +53,8 @@ export default function SaveBracket(props){
         axios.put('https://evanmgary-portfolio.vercel.app/api/bracket',{
                 name: name,
                 user: "not implemented yet",
-                state: saveState()
+                state: saveState(),
+                gender: props.isMens
             })
             .then((response) => {
                 setStatusText("Bracket saved.")
